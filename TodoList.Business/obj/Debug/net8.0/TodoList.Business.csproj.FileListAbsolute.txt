@@ -1,0 +1,14 @@
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\bin\Debug\net8.0\TodoList.Business.deps.json
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\bin\Debug\net8.0\TodoList.Business.dll
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\bin\Debug\net8.0\TodoList.Business.pdb
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.csproj.AssemblyReference.cache
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.AssemblyInfoInputs.cache
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.AssemblyInfo.cs
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.csproj.CoreCompileInputs.cache
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.dll
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\refint\TodoList.Business.dll
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.pdb
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\ref\TodoList.Business.dll
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\bin\Debug\net8.0\TodoList.Business.runtimeconfig.json
+C:\Users\iremo\source\repos\TodoListApi\TodoList.Business\obj\Debug\net8.0\TodoList.Business.genruntimeconfig.cache
