@@ -1,0 +1,67 @@
+<div class="container mt-5 pt-5">
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-outline-danger" routerLink="/home">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+    <h3 class="mt-5 text-center" style="font-family:cursive; font-weight: bold; color: rgb(24, 102, 58);">Add New Task
+    </h3>
+
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+            <label for="category" formControlName="categoryId">Category <span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="categoryId" aria-label="Default select example"
+                [ngClass]="{'is-invalid': taskForm.controls['categoryId'].invalid && taskForm.controls['categoryId'].touched}">
+                <option value="">Select Category</option>
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+            <div *ngIf="taskForm.controls['categoryId'].invalid && taskForm.controls['categoryId'].touched"
+                class="text-danger">
+                Category is required
+            </div>
+        </div>
+
+
+        <div class="form-group mb-3">
+            <label for="priority" class="form-label">Priority <span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="priorityId" aria-label="Default select example"
+                [ngClass]="{'is-invalid': taskForm.controls['priorityId'].invalid && taskForm.controls['priorityId'].touched}">
+                <option value="">Select Priority Level</option>
+                <option *ngFor="let priority of priorities" [value]="priority.id">{{ priority.level }}</option>
+            </select>
+            <div *ngIf="taskForm.controls['priorityId'].invalid && taskForm.controls['priorityId'].touched"
+                class="text-danger">
+                Priority is required
+            </div>
+        </div>
+
+
+        <div class="form-group mb-3">
+            <label for="name" class="form-label">Task Name <span class="text-danger">*</span></label>
+            <input type="text" id="name" formControlName="name" class="form-control" placeholder="Enter task name"
+                [ngClass]="{'is-invalid': taskForm.controls['name'].invalid && taskForm.controls['name'].touched}">
+            <div *ngIf="taskForm.controls['name'].invalid && taskForm.controls['name'].touched" class="text-danger">
+                Task name is required
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="description" class="form-label">Task Description </label>
+            <input type="text" id="description" formControlName="description" class="form-control"
+                placeholder="Enter task description">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="dueDate" class="form-label">Due Date <span class="text-danger">*</span></label>
+            <input type="date" id="dueDate" formControlName="dueDate" class="form-control"
+                [ngClass]="{'is-invalid': taskForm.controls['dueDate'].invalid && taskForm.controls['dueDate'].touched}">
+            <div *ngIf="taskForm.controls['dueDate'].invalid && taskForm.controls['dueDate'].touched"
+                class="text-danger">
+                Due date is required
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100 mt-3" [disabled]="taskForm.invalid">Add Task</button>
+
+    </form>
+</div>

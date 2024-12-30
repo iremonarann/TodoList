@@ -1,0 +1,55 @@
+<main class="form-signin w-50 m-auto container-sm text-center">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h1 class="h3 mb-3 fw-normal mt-5">Sign up!</h1>
+
+    <div class="form-floating">
+      <input type="text" formControlName="name" class="form-control" placeholder="Name" required>
+      <label for="name">Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" formControlName="surname" class="form-control" placeholder="Surname" required>
+      <label for="surname">Surname</label>
+      <div *ngIf="registerForm.get('surname')?.hasError('pattern') && registerForm.get('surname')?.touched">
+        Boşluk karakteri kullanılamaz.
+      </div>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" formControlName="username" class="form-control" placeholder="Username" required>
+      <label for="username">Username</label>
+      <div *ngIf="registerForm.get('username')?.hasError('pattern') && registerForm.get('username')?.touched">
+        Boşluk karakteri kullanılamaz.
+      </div>
+    </div>
+
+    <div class="form-floating">
+      <input type="email" formControlName="email" class="form-control" placeholder="Email" required>
+      <label for="email">Email</label>
+      <div *ngIf="registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched">
+        Geçerli bir e-posta adresi giriniz.
+      </div>
+    </div>
+
+    <div class="form-floating">
+      <input type="password" formControlName="password" class="form-control" placeholder="Password" required>
+      <label for="password">Password</label>
+      <div *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched">
+        Şifre en az 8 karakter olmalıdır.
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-dark w-100 mt-2" [disabled]="registerForm.invalid">Sign up</button>
+
+    <p *ngIf="errorMessage">{{ errorMessage }} </p>
+
+    <button class="btn btn-sm btn-dark w-25 mt-5" type="submit" routerLink="/login">Sign in</button>
+  </form>
+</main>
+
+
+
+
+
+
+

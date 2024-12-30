@@ -1,0 +1,155 @@
+<h3 class="text-center display-5" style="margin-top: 8%; font-weight:500;">Admin Dashboard</h3>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-5 me-5 ms-5">
+    <div class="col">
+        <div class="card text-bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-center">Users Management</h5>
+                <p class="card-text"></p>
+                <button type="button" class="btn btn-light" (click)="scrollToSection('usersManagementSection')">Go Users
+                    Management</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-bg-danger mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-center">Todo Items Management</h5>
+                <p class="card-text"></p>
+                <button type="button" class="btn btn-light" (click)="scrollToSection('todoManagementSection')">Go Todo Items Management</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-center">Categories Management</h5>
+                <p class="card-text"></p>
+                <button type="button" class="btn btn-light" (click)="scrollToSection('categoriesManagementSection')">Go Categories Management</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title text-center">Priorities Management</h5>
+                <p class="card-text"></p>
+                <button type="button" class="btn btn-light" (click)="scrollToSection('prioritiesManagementSection')">Go Priorities Management</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="usersManagementSection" class="ms-5 me-5" >
+    <h4 class="text-center" style="color:darkgreen; margin-top: 20%;">List of Users</h4>
+    <table class="table table-bordered border-success mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm me-2" (click)="deleteUser(user.id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-secondary mt-4" (click)="closeSection()">Exit Users Management</button>
+</div>
+
+<div id="todoManagementSection" class="ms-5 me-5" >
+    <h4 class="text-center" style="color:darkred; margin-top: 20%;">List of Todo Items</h4>
+    <table class="table table-bordered border-danger mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Created Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of todoItems">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.dueDate | date }}</td>
+                <td>{{ item.created | date }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <button class="btn btn-secondary mt-4" (click)="closeSection()">Exit Todo Items Management</button>
+</div>
+
+
+<div id="categoriesManagementSection" class="ms-5 me-5" >
+    <h4 class="text-center" style="color:darkorange; margin-top: 20%;">List of Categories</h4>
+    <table class="table table-bordered border-warning mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories">
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm me-2" (click)="deleteItem(category.id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-secondary mt-4" (click)="closeSection()">Exit Categories Management</button>
+</div>
+
+
+<div id="prioritiesManagementSection" class="ms-5 me-5" >
+    <h4 class="text-center" style="color:deepskyblue ; margin-top: 20%;">List of Categories</h4>
+    <table class="table table-bordered border-info mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Level</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let priority of priorities">
+                <td>{{ priority.id }}</td>
+                <td>{{ priority.level }}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm me-2" (click)="deleteItem(priority.id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-secondary mt-4" (click)="closeSection()">Exit Priorities Management</button>
+</div>

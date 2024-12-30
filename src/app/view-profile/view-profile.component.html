@@ -1,0 +1,18 @@
+<div class="container mt-5 pt-5">
+    <h3 class="text-center" style="font-family:cursive;">Profile Details</h3>
+
+    <div *ngIf="user">
+        <div class="card text-bg-light mt-4">
+            <div class="card-header">{{ user.username }}'s Information</div>
+            <div class="card-body">
+                <p><strong>Name:</strong> {{ user.name }}</p>
+                <p><strong>Surname:</strong> {{ user.surname }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Number of Tasks:</strong> {{ taskCount }}</p>
+                <p><strong>Completed Tasks:</strong> {{ completedTaskCount }}</p>
+                <p><strong>Incompleted Tasks:</strong> {{ incompletedTaskCount }}</p>
+            </div>
+        </div>
+    </div>
+</div>
